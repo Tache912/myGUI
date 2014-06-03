@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1401801042 source:c:\users\tache-home\google ‘∆∂À”≤≈Ã\cpp\novice fight !\mygui\main.cpp
+	<tchar.h>
+	<windows.h>
+	<iostream>
+	"MessagePool.h"
+
+1401801631 c:\users\tache-home\google ‘∆∂À”≤≈Ã\cpp\novice fight !\mygui\messagepool.h
+
+1401802251 source:c:\users\tache-home\google ‘∆∂À”≤≈Ã\cpp\novice fight !\mygui\messagepool.cpp
+	"MessagePool.h"
+	<iostream>
+	<windows.h>
+
