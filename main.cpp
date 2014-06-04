@@ -92,6 +92,11 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
         case WM_DESTROY:
             PostQuitMessage (0);       /* send a WM_QUIT to the message queue */
             break;
+
+        case WM_KEYDOWN:
+        case WM_KEYUP:                  //将键盘消息传给MessagePool
+            return SetCurrentKeyBoardStatus(message,wParam);
+
         case WM_LBUTTONDOWN:
         case WM_LBUTTONUP:
         case WM_RBUTTONDOWN:

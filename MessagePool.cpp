@@ -43,3 +43,19 @@ int SetCurrentMouseStatus(unsigned int _Message,unsigned int _wParam,int _x,int 
     }
     return 0;
 }
+
+int SetCurrentKeyBoardStatus(unsigned int _Message,unsigned int _wParam)
+{
+    switch(_Message)
+    {
+        case WM_KEYDOWN:
+            CurrentKeyBoardStatus.KeyStatus[_wParam]=DOWN;
+            //cout<<"Key "<<_wParam<<" Down now"<<endl;
+            break;
+        case WM_KEYUP:
+            CurrentKeyBoardStatus.KeyStatus[_wParam]=UP;
+            //cout<<"Key "<<_wParam<<" Up now"<<endl;
+            break;
+    }
+    return 0;
+}

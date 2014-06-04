@@ -25,5 +25,11 @@ static MouseStatus CurrentMouseStatus;
 int SetCurrentMouseStatus(unsigned int _Message,unsigned int _wParam,int _x,int _y);
 
 
+struct KeyboardStatus
+{
+    bool KeyStatus[255];//键盘单个按键状态
+};
+static KeyboardStatus CurrentKeyBoardStatus;
+int SetCurrentKeyBoardStatus(unsigned int _Message,unsigned int _wParam);
 
 
