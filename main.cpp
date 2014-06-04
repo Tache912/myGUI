@@ -9,6 +9,7 @@
 #include <iostream>
 
 #include "MessagePool.h"
+#include "Pen.h"
 
 #define GET_X_LPARAM(lp) ((int)(short)LOWORD(lp))
 #define GET_Y_LPARAM(lp) ((int)(short)HIWORD(lp))
@@ -69,7 +70,14 @@ int WINAPI WinMain (HINSTANCE hThisInstance,
     /* Make the window visible on the screen */
     ShowWindow (hwnd, nCmdShow);
 
-    /* Run the message loop. It will run until GetMessage() returns 0 */
+    //↓窗口构建完毕，开始初始化全局变量
+    CurrentMouseStatus.Initialization();
+    CurrentKeyBoardStatus.Initialization();
+
+    //↑全局变量初始化完毕
+
+
+    //进入消息循环
     while (GetMessage (&messages, NULL, 0, 0))
     {
         /* Translate virtual-key messages into character messages */
@@ -104,7 +112,7 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
         case WM_MBUTTONDOWN:
         case WM_MBUTTONUP:
         case WM_MOUSEWHEEL:
-        case WM_MOUSEMOVE:          //将鼠标消息扔给内建的MessagePool
+        case WM_MOUSEMOVE:              //将鼠标消息扔给内建的MessagePool
             return SetCurrentMouseStatus(message,wParam,GET_X_LPARAM(lParam),GET_Y_LPARAM(lParam));
 
         default:                      /* for messages that we don't deal with */

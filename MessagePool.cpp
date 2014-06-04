@@ -3,6 +3,18 @@
 #include <windows.h>
 
 using namespace std;
+
+void MouseStatus::Initialization()
+{
+    x=0;
+    y=0;
+    ButtonStatus[Left]=UP;
+    ButtonStatus[Right]=UP;
+    ButtonStatus[Middle]=UP;
+    WheelRollCounter=0;
+    //cout<<"MouseStatus Initialization Completed."<<endl;
+}
+
 int SetCurrentMouseStatus(unsigned int _Message,unsigned int _wParam,int _x,int _y)
 {
     switch (_Message)
@@ -42,6 +54,12 @@ int SetCurrentMouseStatus(unsigned int _Message,unsigned int _wParam,int _x,int 
             break;
     }
     return 0;
+}
+
+void KeyboardStatus::Initialization()
+{
+    memset(KeyStatus,0,sizeof(KeyStatus)/sizeof(KeyStatus[0]));//快速数组初始化（用memset清零）
+    //cout<<"KeyboardStatus Initialization Completed."<<endl;
 }
 
 int SetCurrentKeyBoardStatus(unsigned int _Message,unsigned int _wParam)

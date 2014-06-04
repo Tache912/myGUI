@@ -37,8 +37,11 @@
 			<Add library="kernel32" />
 			<Add library="comctl32" />
 		</Linker>
+		<Unit filename="Layer.h" />
 		<Unit filename="MessagePool.cpp" />
 		<Unit filename="MessagePool.h" />
+		<Unit filename="Pen.cpp" />
+		<Unit filename="Pen.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
