@@ -37,6 +37,7 @@
 			<Add library="kernel32" />
 			<Add library="comctl32" />
 		</Linker>
+		<Unit filename="BasicDraw.h" />
 		<Unit filename="Layer.cpp" />
 		<Unit filename="Layer.h" />
 		<Unit filename="MessagePool.cpp" />

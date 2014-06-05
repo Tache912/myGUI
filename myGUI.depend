@@ -12,13 +12,14 @@
 	<iostream>
 	<windows.h>
 
-1401962408 source:c:\users\tache-home\documents\github\mygui\main.cpp
+1401969845 source:c:\users\tache-home\documents\github\mygui\main.cpp
 	<tchar.h>
 	<windows.h>
 	<iostream>
 	"MessagePool.h"
 	"Pen.h"
 	"Layer.h"
+	"BasicDraw.h"
 
 1401863326 c:\users\tache-home\documents\github\mygui\messagepool.h
 
@@ -32,5 +33,11 @@
 1401900848 source:c:\users\tache-home\documents\github\mygui\pen.cpp
 	"Pen.h"
 
-1401963583 c:\users\tache-home\documents\github\mygui\layer.h
+1401989786 c:\users\tache-home\documents\github\mygui\layer.h
+
+1401973852 source:c:\users\tache-home\documents\github\mygui\layer.cpp
+	<cstring>
+	"Layer.h"
+
+1401974307 c:\users\tache-home\documents\github\mygui\basicdraw.h
 
