@@ -12,7 +12,7 @@
 	<iostream>
 	<windows.h>
 
-1401969845 source:c:\users\tache-home\documents\github\mygui\main.cpp
+1402076703 source:c:\users\tache-home\documents\github\mygui\main.cpp
 	<tchar.h>
 	<windows.h>
 	<iostream>
@@ -20,24 +20,47 @@
 	"Pen.h"
 	"Layer.h"
 	"BasicDraw.h"
+	"global.h"
 
-1401863326 c:\users\tache-home\documents\github\mygui\messagepool.h
+1402029476 c:\users\tache-home\documents\github\mygui\messagepool.h
 
 1401962501 source:c:\users\tache-home\documents\github\mygui\messagepool.cpp
 	"MessagePool.h"
 	<cstring>
 	<windows.h>
 
-1401900890 c:\users\tache-home\documents\github\mygui\pen.h
+1402072179 c:\users\tache-home\documents\github\mygui\pen.h
 
-1401900848 source:c:\users\tache-home\documents\github\mygui\pen.cpp
+1402072928 source:c:\users\tache-home\documents\github\mygui\pen.cpp
+	<iostream>
+	"global.h"
 	"Pen.h"
 
-1401989786 c:\users\tache-home\documents\github\mygui\layer.h
+1402072515 c:\users\tache-home\documents\github\mygui\layer.h
 
-1401973852 source:c:\users\tache-home\documents\github\mygui\layer.cpp
+1402072535 source:c:\users\tache-home\documents\github\mygui\layer.cpp
 	<cstring>
+	"global.h"
 	"Layer.h"
 
-1401974307 c:\users\tache-home\documents\github\mygui\basicdraw.h
+1402074329 c:\users\tache-home\documents\github\mygui\basicdraw.h
+
+1402078540 source:c:\users\tache-home\documents\github\mygui\basicdraw.cpp
+	<cmath>
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"global.h"
+	"BasicDraw.h"
+	"Pen.h"
+	"Layer.h"
+
+1402072515 c:\users\tache-home\documents\github\mygui\global.h
+	"Pen.h"
+	"Layer.h"
+
+1402072515 source:c:\users\tache-home\documents\github\mygui\global.cpp
+	"global.h"
+	"Pen.h"
+	"Layer.h"
 

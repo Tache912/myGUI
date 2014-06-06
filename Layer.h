@@ -1,4 +1,6 @@
 #define MAX_LAYER 64
+#ifndef Layer_H
+#define Layer_H
 
 struct Layer
 {
@@ -25,14 +27,13 @@ struct Layer
 
 };
 
-
-static Layer myLayerArray[MAX_LAYER];
-
 void myLayerArrayInitialization();
 
 int CreateMyLayer(int _x,int _y,int _nWidth,int _nHeight,unsigned char _R,unsigned char _G,unsigned char _B,unsigned char _A);
 
 void CreateMask(int _LayerID);
+
+void DeleteMask(int LayerID);
 
 void SwapLayerInArray(int LayerID1,int LayerID2);
 
@@ -40,5 +41,5 @@ void LayerResize(int LayerID,int _newWidth,int _newHeight);//从图层中点扩�
 
 void DeleteMyLayer(int LayerID);
 
-
+#endif // Layer_H
 

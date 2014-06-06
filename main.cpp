@@ -4,17 +4,40 @@
     #define UNICODE
 #endif
 
+#define WindowWidth 800
+#define WindowHeight 600
+
+
 #include <tchar.h>
 #include <windows.h>
 #include <iostream>
+
+HDC hDC_global;
+
 
 #include "MessagePool.h"
 #include "Pen.h"
 #include "Layer.h"
 #include "BasicDraw.h"
+#include "global.h"
+
+void DrawCurrentLayerToWindow_Test()//测试用的图层显示函数，非最终版本
+{
+    HDC hDC=hDC_global;
+    HDC DisplayLayer=CreateCompatibleDC(hDC);
+    HBITMAP myBMP=CreateCompatibleBitmap(hDC,myLayerArray[CurrentLayerID].nWidth,myLayerArray[CurrentLayerID].nHeight);
+    SetBitmapBits (myBMP,myLayerArray[CurrentLayerID].nWidth*myLayerArray[CurrentLayerID].nHeight*4,myLayerArray[CurrentLayerID].Buffer);
+    SelectObject (DisplayLayer,myBMP);
+    DeleteObject(myBMP);
+    //SetMapMode(hDC,MM_LOMETRIC);
+    //cout<<StretchBlt(hDC,0,CurrentLayer->y,CurrentLayer->x,CurrentLayer->y,DisplayLayer,0,0,CurrentLayer->x,CurrentLayer->y,SRCCOPY)<<endl;
+    BitBlt(hDC,myLayerArray[CurrentLayerID].x,myLayerArray[CurrentLayerID].y,myLayerArray[CurrentLayerID].nWidth,myLayerArray[CurrentLayerID].nHeight,DisplayLayer,0,0,SRCCOPY);
+}
 
 #define GET_X_LPARAM(lp) ((int)(short)LOWORD(lp))
 #define GET_Y_LPARAM(lp) ((int)(short)HIWORD(lp))
+
+
 
 using namespace std;
 /*  Declare Windows procedure  */
@@ -61,8 +84,8 @@ int WINAPI WinMain (HINSTANCE hThisInstance,
            WS_OVERLAPPEDWINDOW, /* default window */
            CW_USEDEFAULT,       /* Windows decides the position */
            CW_USEDEFAULT,       /* where the window ends up on the screen */
-           544,                 /* The programs width */
-           375,                 /* and height in pixels */
+           WindowWidth,                 /* The programs width */
+           WindowHeight,                 /* and height in pixels */
            HWND_DESKTOP,        /* The window is a child-window to desktop */
            NULL,                /* No menu */
            hThisInstance,       /* Program Instance handler */
@@ -72,11 +95,42 @@ int WINAPI WinMain (HINSTANCE hThisInstance,
     /* Make the window visible on the screen */
     ShowWindow (hwnd, nCmdShow);
 
+
+
     //↓窗口构建完毕，开始初始化全局变量
     CurrentMouseStatus.Initialization();
     CurrentKeyBoardStatus.Initialization();
+    myLayerArrayInitialization();
+    myPenArrayInitialization();
+
+    hDC_global=GetDC(hwnd);
 
     //↑全局变量初始化完毕
+
+    //手工测试代码
+
+    int test_Pen_ID=CreateMyPen(1,255,0,0,0);
+    cout<<"myPenArray["<<test_Pen_ID<<"].Enable="<<myPenArray[test_Pen_ID].Enable<<endl;
+    int test_Layer_ID=CreateMyLayer(100,50,500,500,255,255,255,255);
+
+
+
+
+    CurrentPenID=test_Pen_ID;
+    CurrentLayerID=test_Layer_ID;
+    cout<<CurrentPenID<<","<<CurrentLayerID<<endl;
+
+    if(CheckCurrentLayerAndPen())
+    {
+        DrawCircle(300,100,30);
+        DrawRectangle(200,300,300,100,0);
+
+        DrawCurrentLayerToWindow_Test();
+        cout<<"OK"<<endl;
+    }
+
+
+    //测试代码结束
 
 
     //进入消息循环

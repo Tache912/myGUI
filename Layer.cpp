@@ -1,4 +1,5 @@
 #include <cstring>
+#include "global.h"
 #include "Layer.h"
 
 

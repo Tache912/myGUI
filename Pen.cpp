@@ -1,6 +1,9 @@
+#include <iostream>
+using namespace std;
+#include "global.h"
 #include "Pen.h"
 
-void PenArrayInitialization()
+void myPenArrayInitialization()
 {
     for(int i=0;i<MAX_PEN;i++)
     {
@@ -21,10 +24,11 @@ int CreateMyPen(int _LineWidth,unsigned char _R,unsigned char _G,unsigned char _
         {
             myPenArray[i].Enable=true;
             myPenArray[i].LineWidth=_LineWidth;
-            myPenArray[i].Color_RGBA[0]=_R;
+            myPenArray[i].Color_RGBA[0]=_B;
             myPenArray[i].Color_RGBA[1]=_G;
-            myPenArray[i].Color_RGBA[2]=_B;
+            myPenArray[i].Color_RGBA[2]=_R;
             myPenArray[i].Color_RGBA[3]=_A;
+            cout<<"myPenArray["<<i<<"].Enable="<<myPenArray[i].Enable<<endl;
             return i;
         }
     }
