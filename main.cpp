@@ -123,7 +123,8 @@ int WINAPI WinMain (HINSTANCE hThisInstance,
     if(CheckCurrentLayerAndPen())
     {
         DrawCircle(300,100,30);
-        DrawRectangle(200,300,300,100,0);
+        //DrawArc(330,130,330,100,90);
+        DrawRoundedRectangle(100,200,300,300,15,0);
 
         DrawCurrentLayerToWindow_Test();
         cout<<"OK"<<endl;

@@ -15,10 +15,10 @@
 bool CheckCurrentLayerAndPen();
 inline void DrawPixel(int _x,int _y);
 bool DrawCircle(int _x,int _y,int _r);
-bool DrawArc(int _cx,int _cy,int _x0,int _y0,double theta);
+bool DrawArc(double _cx,double _cy,double _x0,double _y0,double _theta_Deg);
 bool DrawLine(int _x0,int _y0,int _x1,int _y1);
 bool DrawRectangle(int _width,int _Height,int _dx,int _dy,double theta);
-bool DrawRoundedRectangle(int _width,int _Height,int _cx,int _cy,int _r);//cx、cy为矩形中心坐标,不能旋转
+bool DrawRoundedRectangle(int _width,int _Height,int _cx,int _cy,int _r,double _theta);//cx、cy为矩形中心坐标
 #endif // BasicDraw_H
 /**
 基本绘图：

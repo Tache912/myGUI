@@ -12,7 +12,7 @@
 	<iostream>
 	<windows.h>
 
-1402076703 source:c:\users\tache-home\documents\github\mygui\main.cpp
+1402132112 source:c:\users\tache-home\documents\github\mygui\main.cpp
 	<tchar.h>
 	<windows.h>
 	<iostream>
@@ -43,9 +43,9 @@
 	"global.h"
 	"Layer.h"
 
-1402074329 c:\users\tache-home\documents\github\mygui\basicdraw.h
+1402126553 c:\users\tache-home\documents\github\mygui\basicdraw.h
 
-1402078540 source:c:\users\tache-home\documents\github\mygui\basicdraw.cpp
+1402132394 source:c:\users\tache-home\documents\github\mygui\basicdraw.cpp
 	<cmath>
 	<iostream>
 	<stdio.h>
